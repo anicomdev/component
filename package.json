@@ -14,7 +14,8 @@
   "files": [
     "dist",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "anicom.css"
   ],
   "repository": {
     "type": "git",
@@ -32,7 +33,7 @@
     "test": "jest --config jestconfig.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run prettier && npm run lint",
-    "scss": "node-sass ./src/styles -o ./"
+    "scss": "node-sass ./src/styles/index.scss ./anicom.css"
   },
   "devDependencies": {
     "@types/react": "^18.2.6",
