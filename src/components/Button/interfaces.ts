@@ -1,3 +1,5 @@
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
 
-export type ButtonDeleteProps = ButtonProps
+export interface ButtonDeleteProps extends ButtonProps {
+  onDeleteSuccess?: () => {}
+}

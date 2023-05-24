@@ -9,6 +9,7 @@
   --trash-lines: #bbc1e1;
   --check: #fff;
   --check-background: #5c86ff;
+
   position: relative;
   border: none;
   outline: none;
@@ -257,18 +258,5 @@
   }
   100% {
     transform: translate(-0.5px, 24px) scaleX(0.5);
-  }
-}
-
-html {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-}
-
-* {
-  box-sizing: inherit;
-  &:before,
-  &:after {
-    box-sizing: inherit;
   }
 }

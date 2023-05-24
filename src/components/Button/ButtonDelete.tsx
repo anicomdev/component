@@ -2,23 +2,26 @@ import * as React from 'react'
 import { ButtonDeleteProps } from './interfaces'
 
 const ButtonDelete: React.FC<ButtonDeleteProps> = (props) => {
-  const { ...rest } = props
+  const { children, onClick, onDeleteSuccess, ...rest } = props
   const [buttonActive, setbuttonActive] = React.useState(false)
-  const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
+
+  const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     if (!buttonActive) setbuttonActive(true)
+    onClick?.(e)
   }
 
   React.useEffect(() => {
     if (buttonActive) {
       setTimeout(() => {
         setbuttonActive(false)
+        onDeleteSuccess?.()
       }, 3200)
     }
   }, [buttonActive])
 
   return (
     <div>
-      <button {...rest} className={`button ${buttonActive && 'delete'}`} onClick={handleClick}>
+      <button {...rest} className={`button ${!!buttonActive && 'delete'}`} onClick={handleClick}>
         <div className='trash'>
           <div className='top'>
             <div className='paper'></div>
@@ -30,7 +33,7 @@ const ButtonDelete: React.FC<ButtonDeleteProps> = (props) => {
             </svg>
           </div>
         </div>
-        <span>Delete Item</span>
+        <span>{children}</span>
       </button>
     </div>
   )
