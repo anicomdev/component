@@ -6,6 +6,11 @@
   "types": "./dist/esm/index.d.ts",
   "license": "MIT",
   "author": "anicom",
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "files": [
     "dist",
     "LICENSE",
@@ -26,7 +31,8 @@
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "test": "jest --config jestconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run prettier && npm run lint"
+    "prepublishOnly": "npm test && npm run prettier && npm run lint",
+    "scss": "node-sass ./src/styles -o ./dist"
   },
   "devDependencies": {
     "@types/react": "^18.2.6",
