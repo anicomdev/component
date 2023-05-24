@@ -1,6 +1,6 @@
 {
   "include": ["src"],
-  "exclude": ["dist", "node_modules", "styles"],
+  "exclude": ["dist", "node_modules", "index.css"],
   "compilerOptions": {
     "module": "esnext",
     "lib": ["dom", "esnext"],

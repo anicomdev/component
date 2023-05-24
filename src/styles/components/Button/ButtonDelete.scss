@@ -32,19 +32,17 @@
     font-weight: 600;
     opacity: var(--span-opacity, 1);
     transform: translateX(var(--span-x, 0)) translateZ(0);
-    transition: transform 0.4s ease var(--span-delay, 0.2s),
-      opacity 0.3s ease var(--span-delay, 0.2s);
+    transition: transform 0.4s ease var(--span-delay, 0.2s), opacity 0.3s ease var(--span-delay, 0.2s);
   }
   .trash {
     display: block;
     position: relative;
     left: -8px;
-    transform: translate(var(--trash-x, 0), var(--trash-y, 1px)) translateZ(0)
-      scale(var(--trash-scale, 0.64));
+    transform: translate(var(--trash-x, 0), var(--trash-y, 1px)) translateZ(0) scale(var(--trash-scale, 0.64));
     transition: transform 0.5s;
     &:before,
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       height: 8px;
       width: 2px;
@@ -52,8 +50,7 @@
       background: var(--icon, var(--trash));
       bottom: 100%;
       transform-origin: 50% 6px;
-      transform: translate(var(--x, 3px), 2px) scaleY(var(--sy, 0.7))
-        rotate(var(--r, 0deg));
+      transform: translate(var(--x, 3px), 2px) scaleY(var(--sy, 0.7)) rotate(var(--r, 0deg));
       transition: transform 0.4s, background 0.3s;
     }
     &:before {
@@ -74,7 +71,7 @@
       transform: translateY(2px);
       &:before,
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         border-radius: 1px;
         background: var(--icon, var(--trash));
@@ -103,7 +100,7 @@
         opacity: 0;
         &:before,
         &:after {
-          content: "";
+          content: '';
           width: var(--w, 10px);
           height: 2px;
           border-radius: 1px;
@@ -131,7 +128,7 @@
       transition: border-color 0.3s;
       &:before,
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         width: 4px;
         height: var(--h, 20px);
@@ -152,8 +149,7 @@
         --b: var(--paper);
         --l: 1px;
         transform: translate(-0.5px, -16px) scaleX(0.5);
-        box-shadow: 7px 0 0 var(--paper), 14px 0 0 var(--paper),
-          21px 0 0 var(--paper);
+        box-shadow: 7px 0 0 var(--paper), 14px 0 0 var(--paper), 21px 0 0 var(--paper);
       }
     }
     .check {
@@ -165,8 +161,7 @@
       top: 24px;
       opacity: var(--check-opacity, 0);
       transform: translateY(var(--check-y, 0)) scale(var(--check-scale, 0.2));
-      transition: transform var(--check-duration, 0.2s) ease
-          var(--check-delay, 0s),
+      transition: transform var(--check-duration, 0.2s) ease var(--check-delay, 0s),
         opacity var(--check-duration-opacity, 0.2s) ease var(--check-delay, 0s);
       svg {
         width: 8px;
@@ -275,36 +270,5 @@ html {
   &:before,
   &:after {
     box-sizing: inherit;
-  }
-}
-
-// Center & dribbble
-body {
-  min-height: 100vh;
-  display: flex;
-  font-family: "Inter", Arial;
-  justify-content: center;
-  align-items: center;
-  background: #eceffc;
-  .dribbble {
-    position: fixed;
-    display: block;
-    right: 20px;
-    bottom: 20px;
-    img {
-      display: block;
-      height: 28px;
-    }
-  }
-  .twitter {
-    position: fixed;
-    display: block;
-    right: 64px;
-    bottom: 14px;
-    svg {
-      width: 32px;
-      height: 32px;
-      fill: #1da1f2;
-    }
   }
 }
